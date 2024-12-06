@@ -47,7 +47,7 @@ The ontology is a pydantic model in the library, with a specific structure. By d
 
 #### （1）Define Entity Relationship Ontology
 
-### The following code is only a simple example of entity relationship ontology. For a more detailed definition of the entity relationship ontology, it can be queried in the running code.
+The following code is only a simple example of entity relationship ontology. For a more detailed definition of the entity relationship ontology, it can be queried in the running code.
 
 ```python
 # Define Entity Relationship Ontology
@@ -373,7 +373,8 @@ The main interface is as shown in the following .gif picture.
 
 #### （2）**class SecondWindow（）**
 This class is the most important part of our ui tools, it is divided into four parts: **Home**, **Extract Triples**, **Generate Knowledge Graph**, **Language Settings** and we also define a lot of methods that need to be used in this class (see the code ui.py for details) and  the simplified code is as follows ：
-````python
+
+~~~python
 class SecondWindow(QWidget):
     def __init__(self, main_window):
         ............................
@@ -420,7 +421,8 @@ class SecondWindow(QWidget):
     def back2_style_sheet(self):
     def language_style_sheet(self):
     def get_html_content(self):
-```
+~~~
+
 The four interfaces are shown in the following GIF image:
 ![Second Window](G:\code\knowledge_graph_generator\ui-image\Second Window.gif)
 
@@ -429,7 +431,7 @@ The four interfaces are shown in the following GIF image:
 This interface is mainly designed for users to monitor the progress of their triple extraction in real time.
 The simplified code is as follows ：
 
-````python
+```python
 class ExtractionThread(QThread):
     def __init__(self, inputdir_path, save_path, erontology, eaontology, llm):
     ............................
@@ -439,7 +441,7 @@ class ExtractionThread(QThread):
     ......................................
     def EAKGgenerate(self, inputdir_path):
     ......................................
-````
+```
 
 **Please see Section 3 for the display of the GIF related to this part.**
 
