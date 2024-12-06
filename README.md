@@ -45,9 +45,9 @@ $ pip install knowledge-graph-builder
 
 The ontology is a pydantic model in the library, with a specific structure. By defining entities, important relationships between entities, and attributes owned by entities, the large language model is guided to extract corresponding information, but it cannot guarantee that only the set relationships are extracted. Different models behave differently.
 
-（1）Define Entity Relationship Ontology
+#### （1）Define Entity Relationship Ontology
 
-The following code is only a simple example of entity relationship ontology. For a more detailed definition of the entity relationship ontology, it can be queried in the running code.
+### The following code is only a simple example of entity relationship ontology. For a more detailed definition of the entity relationship ontology, it can be queried in the running code.
 
 ```python
 # Define Entity Relationship Ontology
@@ -112,7 +112,7 @@ LLM = GroqClient(model=model, temperature=0.1, top_p=0.5)
 
 You can also define your own LLM client and pass it on to the KGBuilder.
 
-#### 4.Split the user text into chunks.
+### 4.Split the user text into chunks.
 
 Since the context window of the current large language model is limited. So we need to properly chunk the text and process one block at a time to create the graph. The block size we should use depends on the context window of the model. According to the project practice test, 800 to 1200 labeled blocks are very suitable.
 
@@ -313,7 +313,7 @@ if Triples_dir:
 ## UI Operating Procedure
 For the convenience of our readers in using our Knowledge Graph Generator, we have developed a simple and user-friendly **UI tool**. Now, let's take a look at this amazing tool together!  Its all in the python file **ui.py**
 ### 1.Environment preparation
-#### (1)Install essential library
+#### （1）Install essential library
 We have developed this **UI** tool based on **PYQT5** and **Tkinter**, so your language environment needs to have these two essential Python libraries.
 
 **You can use pip to install these two libraries**
@@ -326,7 +326,7 @@ $ pip install Tkinter
 conda install PyQt5
 conda install Tkinter
 ````
-#### (2)Make sure your code files are all in the same directory.
+#### （2）Make sure your code files are all in the same directory.
 The ui.py begin at the following contents :
 ```` python
 import sys
@@ -371,7 +371,7 @@ class MyWindow(QWidget):
 The main interface is as shown in the following .gif picture.
 ![First Page](G:\code\knowledge_graph_generator\ui-image\First Page.gif)
 
-#### (2)**class SecondWindow（）**
+#### （2）**class SecondWindow（）**
 This class is the most important part of our ui tools, it is divided into four parts: **Home**, **Extract Triples**, **Generate Knowledge Graph**, **Language Settings** and we also define a lot of methods that need to be used in this class (see the code ui.py for details) and  the simplified code is as follows ：
 ````python
 class SecondWindow(QWidget):
@@ -425,8 +425,10 @@ The four interfaces are shown in the following GIF image:
 ![Second Window](G:\code\knowledge_graph_generator\ui-image\Second Window.gif)
 
 #### （3）**classExtractionThread（）**
+
 This interface is mainly designed for users to monitor the progress of their triple extraction in real time.
 The simplified code is as follows ：
+
 ````python
 class ExtractionThread(QThread):
     def __init__(self, inputdir_path, save_path, erontology, eaontology, llm):
