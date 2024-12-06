@@ -81,7 +81,7 @@ def export_to_directory(graph, ontology, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    # Define file name
+    # Define file the name
     ER_filename = "ERTriples.xlsx"
     EA_filename = "EATriples.xlsx"
     

@@ -16,7 +16,7 @@ from knowledge_graph_builder import KnowledgeGraphBuilder, GroqClient, KGToNeo4j
 from KGGenerate import define_ERontology,define_EAontology,export_to_directory
 import pandas as pd
 import os
-# Load the configuration in the .env file
+# Load the configuration in the .env 
 load_dotenv()
 
 
@@ -134,7 +134,7 @@ class MyWindow(QWidget):
 
         # Background image settings
         palette = QPalette()
-        pixmap = QPixmap("ui-image/bg1.jpg")
+        pixmap = QPixmap("UI-Image/bg1.jpg")
         palette.setBrush(QPalette.Window, QBrush(pixmap))
         self.setPalette(palette)
 
@@ -219,7 +219,7 @@ class SecondWindow(QWidget):
 
         # Add an image to the top of the sidebar
         image_label = QLabel()
-        pixmap = QPixmap('ui-image/ITRS.jpg')  
+        pixmap = QPixmap('UI-Image/ITRS.jpg')  
         pixmap = pixmap.scaled(150, 150, aspectRatioMode=1)  
         image_label.setPixmap(pixmap)
 
@@ -365,7 +365,7 @@ class SecondWindow(QWidget):
         extraction_page.setLayout(extraction_layout)
 
         # Set background image
-        self.background_pixmap = QPixmap("ui-image/bg2.jpg") 
+        self.background_pixmap = QPixmap("UI-Image/bg2.jpg") 
 
 
        

@@ -45,7 +45,7 @@ $ pip install knowledge-graph-builder
 
 The ontology is a pydantic model in the library, with a specific structure. By defining entities, important relationships between entities, and attributes owned by entities, the large language model is guided to extract corresponding information, but it cannot guarantee that only the set relationships are extracted. Different models behave differently.
 
-（1）Define Entity Relationship Ontology
+#### （1）Define Entity Relationship Ontology
 
 The following code is only a simple example of entity relationship ontology. For a more detailed definition of the entity relationship ontology, it can be queried in the running code.
 
@@ -112,7 +112,7 @@ LLM = GroqClient(model=model, temperature=0.1, top_p=0.5)
 
 You can also define your own LLM client and pass it on to the KGBuilder.
 
-#### 4.Split the user text into chunks.
+### 4.Split the user text into chunks.
 
 Since the context window of the current large language model is limited. So we need to properly chunk the text and process one block at a time to create the graph. The block size we should use depends on the context window of the model. According to the project practice test, 800 to 1200 labeled blocks are very suitable.
 
@@ -313,7 +313,7 @@ if Triples_dir:
 ## UI Operating Procedure
 For the convenience of our readers in using our Knowledge Graph Generator, we have developed a simple and user-friendly **UI tool**. Now, let's take a look at this amazing tool together!  Its all in the python file **ui.py**
 ### 1.Environment preparation
-#### (1)Install essential library
+#### （1）Install essential library
 We have developed this **UI** tool based on **PYQT5** and **Tkinter**, so your language environment needs to have these two essential Python libraries.
 
 **You can use pip to install these two libraries**
@@ -326,7 +326,7 @@ $ pip install Tkinter
 conda install PyQt5
 conda install Tkinter
 ````
-#### (2)Make sure your code files are all in the same directory.
+#### （2）Make sure your code files are all in the same directory.
 The ui.py begin at the following contents :
 ```` python
 import sys
@@ -369,11 +369,12 @@ class MyWindow(QWidget):
         self.second_window.show()
 ````
 The main interface is as shown in the following .gif picture.
-![First Page](G:\code\knowledge_graph_generator\ui-image\First Page.gif)
+![First Page](G:\code\knowledge_graph_generator\UI-Image\First Page.gif)
 
-#### (2)**class SecondWindow（）**
+#### （2）**class SecondWindow（）**
 This class is the most important part of our ui tools, it is divided into four parts: **Home**, **Extract Triples**, **Generate Knowledge Graph**, **Language Settings** and we also define a lot of methods that need to be used in this class (see the code ui.py for details) and  the simplified code is as follows ：
-````python
+
+~~~python
 class SecondWindow(QWidget):
     def __init__(self, main_window):
         ............................
@@ -420,14 +421,17 @@ class SecondWindow(QWidget):
     def back2_style_sheet(self):
     def language_style_sheet(self):
     def get_html_content(self):
-```
+~~~
+
 The four interfaces are shown in the following GIF image:
-![Second Window](G:\code\knowledge_graph_generator\ui-image\Second Window.gif)
+![Second Window](G:\code\knowledge_graph_generator\UI-Image\Second Window.gif)
 
 #### （3）**classExtractionThread（）**
+
 This interface is mainly designed for users to monitor the progress of their triple extraction in real time.
 The simplified code is as follows ：
-````python
+
+```python
 class ExtractionThread(QThread):
     def __init__(self, inputdir_path, save_path, erontology, eaontology, llm):
     ............................
@@ -437,7 +441,7 @@ class ExtractionThread(QThread):
     ......................................
     def EAKGgenerate(self, inputdir_path):
     ......................................
-````
+```
 
 **Please see Section 3 for the display of the GIF related to this part.**
 
@@ -467,7 +471,7 @@ d.Now,let's use it
 just three steps:choose InputDir、choose  Save Path、Click Start！
 
 **We will take the ten txt documents in our code compression package located at /data/example as an example for extraction, and place the extracted results in the /data/output directory.**
-![Extract Triples](G:\code\knowledge_graph_generator\ui-image\Extract Triples.gif)
+![Extract Triples](G:\code\knowledge_graph_generator\UI-Image\Extract Triples.gif)
 Please **note** that he can **only handle txt documents**, and **if there are many documents, his extraction speed may be slower**; and he extracts triplets by calling large models, so **make sure your computer can call large models**.
 
 #### （2）To Generate Knowledge Graph
@@ -476,11 +480,11 @@ a.You need to **select the path** of the triple document you will use to generat
 b.Then **enter your neo4j database username and password** (make sure your neo4j database is open and the account and password are correct)
 
 c.**Click the Start Generate button** and just wait
-![Generate Knowledge Graph](G:\code\knowledge_graph_generator\ui-image\Generate Knowledge Graph.gif)
+![Generate Knowledge Graph](G:\code\knowledge_graph_generator\UI-Image\Generate Knowledge Graph.gif)
 
 #### （3）Switch language
 For a better user experience with our UI tool, our UI **supports Chinese-English bilingual switching**. Be sure to place the Dictionary.py file in the same directory, as our language switching relies on this pre-defined dictionary.
-![Language Settings](G:\code\knowledge_graph_generator\ui-image\Language Settings.gif)
+![Language Settings](G:\code\knowledge_graph_generator\UI-Image\Language Settings.gif)
 
 ## Awaiting improvement
 Our Knowledge Graph Generator currently can only extract txt documents, and the documents written to the neo4j database can only be in Excel format. **Our future work will focus on researching how to handle a Knowledge Graph Generator that can process multiple formats**.

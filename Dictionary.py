@@ -1,4 +1,4 @@
-# English to Chinese translation dictionary
+# English to Chinese translation dictionary.
 EN_to_CN = {
     "Usage Instructions": "使用说明",
     "Please select the file to extract triples and the path to save the extracted triples.": "请选取提取三元组的文件和保存提取结果的路径。",
@@ -27,7 +27,7 @@ EN_to_CN = {
     "Please choose your file to generate Knowledge Graph.": "请选择文件以生成知识图谱",
 }
 
-# Chinese to English translation dictionary
+# Chinese to English translation dictionary.
 CN_to_EN = {
     "Knowledge Graph Construction": "知识图谱构建",
     "Please select the file for extracting triples.": "请选择用于提取三元组的文件。",
